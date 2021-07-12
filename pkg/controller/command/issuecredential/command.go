@@ -375,6 +375,8 @@ func (c *Command) DeclineProposal(rw io.Writer, req io.Reader) command.Error {
 func (c *Command) AcceptOffer(rw io.Writer, req io.Reader) command.Error {
 	var args AcceptOfferArgs
 
+	return command.NewValidationError(InvalidRequestErrorCode, errors.New("error bro"))
+
 	if err := json.NewDecoder(req).Decode(&args); err != nil {
 		logutil.LogInfo(logger, CommandName, AcceptOffer, err.Error())
 		return command.NewValidationError(InvalidRequestErrorCode, err)
