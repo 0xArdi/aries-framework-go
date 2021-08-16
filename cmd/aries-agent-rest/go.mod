@@ -11,6 +11,7 @@ require (
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/hyperledger/aries-framework-go v0.1.7-0.20210422133815-2ef2d99cb692
+	github.com/hyperledger/aries-framework-go-ext/component/vdr/indy v0.0.0-20210813123233-e22ddceee0b1
 	github.com/hyperledger/aries-framework-go/component/storage/leveldb v0.0.0-20210422133815-2ef2d99cb692
 	github.com/hyperledger/aries-framework-go/component/storageutil v0.0.0-20210422133815-2ef2d99cb692
 	github.com/hyperledger/aries-framework-go/spi v0.0.0-20210422133815-2ef2d99cb692
@@ -22,8 +23,10 @@ require (
 
 replace (
 	github.com/hyperledger/aries-framework-go => ../..
+	github.com/hyperledger/aries-framework-go-ext/component/vdr/indy => github.com/ardi1998/aries-framework-go-ext/component/vdr/indy v0.2.0
 	github.com/hyperledger/aries-framework-go/component/storage/leveldb => ../../component/storage/leveldb
 	github.com/hyperledger/aries-framework-go/component/storageutil => ../../component/storageutil
 	github.com/hyperledger/aries-framework-go/spi => ../../spi
 	github.com/hyperledger/aries-framework-go/test/component => ../../test/component
+
 )

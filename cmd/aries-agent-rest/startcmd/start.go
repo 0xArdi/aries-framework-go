@@ -20,6 +20,7 @@ import (
 	"github.com/rs/cors"
 	"github.com/spf13/cobra"
 
+	"github.com/hyperledger/aries-framework-go-ext/component/vdr/indy"
 	"github.com/hyperledger/aries-framework-go/component/storage/leveldb"
 	"github.com/hyperledger/aries-framework-go/component/storageutil/mem"
 	"github.com/hyperledger/aries-framework-go/pkg/common/log"
@@ -500,6 +501,15 @@ func getResolverOpts(httpResolvers []string) ([]aries.Option, error) {
 		}
 	}
 
+	opt := indy.WithIndyVDRGenesisFile("genesis_path")
+
+	indyVdr, err := indy.New("sov", opt)
+	if err != nil {
+		return nil, fmt.Errorf("failed to setup indy vdr")
+	}
+
+	opts = append(opts, aries.WithVDR(indyVdr))
+
 	return opts, nil
 }
 
@@ -688,6 +698,8 @@ func createAriesAgent(parameters *agentParameters) (*context.Provider, error) {
 	}
 
 	opts = append(opts, inboundTransportOpt...)
+
+	opts = append(opts)
 
 	resolverOpts, err := getResolverOpts(parameters.httpResolvers)
 	if err != nil {
