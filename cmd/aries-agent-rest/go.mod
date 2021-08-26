@@ -23,7 +23,7 @@ require (
 
 replace (
 	github.com/hyperledger/aries-framework-go => ../..
-	github.com/hyperledger/aries-framework-go-ext/component/vdr/indy => github.com/ardi1998/aries-framework-go-ext/component/vdr/indy v0.1.6
+	github.com/hyperledger/aries-framework-go-ext/component/vdr/indy => github.com/ardi1998/aries-framework-go-ext/component/vdr/indy v0.0.1
 	github.com/hyperledger/aries-framework-go/component/storage/leveldb => ../../component/storage/leveldb
 	github.com/hyperledger/aries-framework-go/component/storageutil => ../../component/storageutil
 	github.com/hyperledger/aries-framework-go/spi => ../../spi
